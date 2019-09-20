@@ -1,7 +1,7 @@
 window.onload = function() {
   // Your code, and code from Stripe's walkthrough goes here.
-  document.getElementById("purchase").addEventListener("click", displayDate);
-
+  document.getElementById("purchase").addEventListener("click", buy);
+  function buy(){
   stripe.redirectToCheckout({
   items: [
     // Replace with the ID of your SKU
@@ -21,4 +21,6 @@ window.onload = function() {
   // using result.error.message.
   console.log(result.error.message) // ADD THIS LINE!
 });
+  }
+
 }
